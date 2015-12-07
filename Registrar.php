@@ -6,6 +6,13 @@
 	$password = "root"; 	
 	$bd_name = "quiz";
 	
+	$a=$_POST['nombreCompleto'];
+	$b=$_POST['mail'];
+	$c=$_POST['numero'];
+	$d=$_POST['especialidad'];
+	
+	
+	
 	//Conexión de Base de Datos	 
 	$connection = new mysqli($server, $user, $password, $bd_name);
  
@@ -20,6 +27,10 @@
 
 		if ($connection->query($sql) === TRUE) {
 		echo "Se ha agregado correctamente el registro a la base de datos.";
+		echo $a;
+	echo $b;
+	echo $c;
+	echo $d;
 	} else {
 		echo "Error: " . $sql . "<br>" . $connection->error;
 	}

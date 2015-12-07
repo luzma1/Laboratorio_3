@@ -22,6 +22,7 @@
 	
 	function vervalores()
 	{  
+		
 			var sAux=""; 
 			var frm = document.getElementById("registro"); 
 			for (i=1;i<frm.elements.length;i++) 
@@ -29,7 +30,9 @@
 					sAux += "NOMBRE: " + frm.elements[i].name + " "; 
 					sAux += "VALOR: " + frm.elements[i].value + "\n"; 
 				} 
-			alert(sAux); 
+			alert(sAux);
+			 
+			return true;
 	} 
 
 	
@@ -100,7 +103,7 @@
 
 <body style="background-color: lightgrey"> 
 
-<form id='registro' onSubmit='return verificarCampos()' action="Registrar.php">	
+<form id='registro' onSubmit='return vervalores()' action="Registrar.php"  method="post">	
 		
 	  Nombre y apellidos:<br>
 	  <input type="text" id="nombreCompleto" required="required" onblur="comprobarNombre()"><br>
