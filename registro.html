@@ -12,7 +12,6 @@
 			if ( !comprobarNombre() ||  !comprobarMail() || !comprobarPassword() || !comprobarTelefono() || !comprobarEspecialidad() ) 
 				{
 					alert ("Rellene los campos correctamente");
-					vervalores();
 					return false;
 				} 
 					
@@ -31,8 +30,6 @@
 					sAux += "VALOR: " + frm.elements[i].value + "\n"; 
 				} 
 			alert(sAux);
-			 
-			return true;
 	} 
 
 	
@@ -103,22 +100,22 @@
 
 <body style="background-color: lightgrey"> 
 
-<form id='registro' onSubmit='return vervalores()' action="Registrar.php"  method="post">	
+<form id='registro' onSubmit='return verificarCampos()' action="Registrar.php"  method="POST">	
 		
 	  Nombre y apellidos:<br>
-	  <input type="text" id="nombreCompleto" required="required" onblur="comprobarNombre()"><br>
+	  <input type="text" id="nombreCompleto" name="nombreCompleto" required="required" onblur="comprobarNombre()"><br>
 	  
 	  Email:<br>
-	  <input type="text" id="mail" required="required"  onblur="comprobarMail()"><br>
+	  <input type="text" id="mail" name="mail" required="required"  onblur="comprobarMail()"><br>
 
 	  Password:<br>
-	  <input type="password" id="pass" required="required"  onblur="comprobarPassword()"><br>
+	  <input type="password" id="pass" name="pass" required="required"  onblur="comprobarPassword()"><br>
 	  
 	  Teléfono:<br>
-	  <input type="tel" id="numero" required="required"  onblur="comprobarTelefono()"><br>
+	  <input type="tel" id="numero" name="numero" required="required"  onblur="comprobarTelefono()"><br>
 	  
 	  Especialidad:<br>
-	  <select id="especialidad" required="required"  onblur="comprobarEspecialidad()">
+	  <select id="especialidad" name="especialidad" required="required"  onblur="comprobarEspecialidad()">
 		  <option> Ingeniería de Computadores </option>
 		  <option> Ingenieria del Software </option>
 		  <option> Computación </option>
@@ -126,7 +123,7 @@
 	  
 	  	Añade una fotografía <br> 
 		 
-	  <input type="file" id="foto"><br>
+	  <input type="file" id="foto" name="foto"><br>
 	  <input type="submit">
   
  </form>
